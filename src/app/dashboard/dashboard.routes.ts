@@ -6,7 +6,9 @@ import { DetalleComponent } from '../ingreso-egreso/detalle/detalle.component';
 
 
 export const dashboardRoutes: Routes = [
-  { path: '', component: EstadisticaComponent },
-  { path: 'ingreso-egreso', component: IngresoEgresoComponent },
-  { path: 'detalle', component: DetalleComponent }
+
+ { path: '', component: EstadisticaComponent },
+ { path: 'ingreso-egreso', component: IngresoEgresoComponent },
+ { path: 'detalle', component: DetalleComponent },
+
 ];
