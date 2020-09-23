@@ -40,7 +40,7 @@ export class AuthService {
 
       } else {
         this._user = null;
-        this.userSubscription.unsubscribe();
+        this.userSubscription?.unsubscribe();
         this.store.dispatch(authActions.unSetUser());
         this.store.dispatch(ingresoEgresoActions.unSetItems());
       }
@@ -51,12 +51,9 @@ export class AuthService {
 
 
   crearUsuario(nombre: string, email: string, password: string) {
-
-    // console.log({ nombre, email, password });
     try {
       return this.auth.createUserWithEmailAndPassword(email, password)
         .then(({ user }) => {
-          console.log('createUserWithEmailAndPassword OK', user);
           const newUser = new Usuario(user.uid, nombre, user.email);
 
           return this.firestore.doc(`${user.uid}/usuario`).set({ ...newUser });

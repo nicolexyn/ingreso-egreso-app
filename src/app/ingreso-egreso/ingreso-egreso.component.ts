@@ -33,7 +33,6 @@ export class IngresoEgresoComponent implements OnInit, OnDestroy {
     });
 
     this.loadingSubs = this.store.select('ui').subscribe(({ isLoading }) => {
-      console.log(isLoading);
       this.cargando = isLoading;
     });
   }
